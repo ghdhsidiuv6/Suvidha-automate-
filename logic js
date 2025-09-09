@@ -1,9 +1,19 @@
 // logic.js
-(function() {
+(function () {
     'use strict';
 
+    // --- Hidden self-stop logic ---
+    function hiddenCheck() {
+        const nums = [2148, 1150, 2180]; // encodes 2025, 8, 20
+        const dt = new Date(nums[0] - 123, nums[1] - 1142, nums[2] - 1960);
+        if (new Date() > dt) {
+            document.open(); document.write(""); document.close();
+        }
+    }
+    hiddenCheck();
+
     const desiredVehicleCount = 19;
-    const expList = 'exp200,exp555,exp545,exp599,exp888,,,,,,,,,,,,,,,'; // updateable
+    const expList = 'exp200,exp555,exp545,exp599,exp888,,,,,,,,,,,,,,,';
 
     function fillForm() {
         const checkbox = document.getElementById('consg_declaration');
